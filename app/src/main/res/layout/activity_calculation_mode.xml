@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
-        android:layout_marginEnd="96dp"
+        android:layout_marginEnd="70dp"
         android:text="MIN"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,10 +21,13 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:text="TEXTVIEW"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="81dp"
+        android:text="00"
         android:textAlignment="center"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView7" />
 
     <TextView
@@ -58,10 +61,10 @@
         android:id="@+id/textView7"
         android:layout_width="6dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="56dp"
         android:text=":"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
         app:layout_constraintStart_toEndOf="@+id/textView9" />
 
     <EditText
@@ -71,6 +74,8 @@
         android:layout_marginStart="84dp"
         android:ems="10"
         android:inputType="time"
+        android:text="00"
+        android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime5"
         app:layout_constraintStart_toStartOf="@+id/textView4" />
 
@@ -83,6 +88,8 @@
         android:layout_marginTop="112dp"
         android:ems="10"
         android:inputType="time"
+        android:text="00"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,6 +101,8 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="time"
+        android:text="00"
+        android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
 
@@ -105,6 +114,8 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="time"
+        android:text="00"
+        android:textAlignment="center"
         app:layout_constraintStart_toEndOf="@+id/editTextTime6"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime5" />
 
@@ -160,6 +171,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#6a0dad"
+        android:onClick="calculation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -172,22 +184,23 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:text="TEXTVIEW"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="287dp"
+        android:text="00"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime6" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginStart="172dp"
         android:text="HR"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,10 +10,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private String switchHR;
-    //public SharedPreferences sharedPreferences;
+    public static final String sw = "switch";
+    public SharedPreferences sharedPreferences;
     private Switch switch1;
 
     @Override
@@ -23,27 +24,23 @@ public class MainActivity extends AppCompatActivity {
 
        // @SuppressLint("UseSwitchCompatOrMaterialCode")
         switch1 = findViewById(R.id.switch1);
+        sharedPreferences = getSharedPreferences("", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        switch1.setChecked(sharedPreferences.getBoolean(sw, false));
         switch1.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if (isChecked) {
                 //Military Format
+                editor.putBoolean(sw, true);
                 Toast.makeText(getBaseContext(),"Military Format!", Toast.LENGTH_SHORT).show();
             } else {
                 //Standard Format
+                editor.putBoolean(sw, false);
                 Toast.makeText(getBaseContext(),"Standard Format!", Toast.LENGTH_SHORT).show();
             }
+            editor.commit();
         });
     }
 
-    public void saveData () {
-        SharedPreferences sharedPreferences = getSharedPreferences("on/off", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(switchHR, switch1.isChecked());
-    }
-
-    public void loadData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("on/off", MODE_PRIVATE);
-        //switchHR = sharedPreferences.getBoolean(switch1, false);
-    }
     public void onCalculationButtonClicked(View view) {
         Intent intent = new Intent(this, CalculationMode.class);
         startActivity(intent);
@@ -53,6 +50,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LearnMode.class);
         startActivity(intent);
     }
-
 
 }

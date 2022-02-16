@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class LearnMode extends AppCompatActivity {
     int randNum;
-    private static Random rand = new Random();
+    private static final Random rand = new Random();
     boolean switchHr;
     Time startTime;
     Time endTime;
@@ -28,9 +28,8 @@ public class LearnMode extends AppCompatActivity {
         Intent intent = getIntent();
         startTime = new Time("2:17pm");
         endTime = new Time("2:17am");
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        switchHr = sharedPreferences.getBoolean("switch", false);
+        SharedPreferences sharedPreferences = getSharedPreferences("TimeMode", MODE_PRIVATE);
+        switchHr = sharedPreferences.getBoolean(MainActivity.sw, true);
         //if true - military format
 
         TextView textView1 = findViewById(R.id.textView10);
@@ -41,19 +40,17 @@ public class LearnMode extends AppCompatActivity {
         TextView textView2 = findViewById(R.id.textView16);
         int rand2 = rand.nextInt(59);
         startTime.setMins(rand2);
-        //textView2.setText(numberString(rand2));
 
         //TextView textView3 = findViewById(R.id.textView15);
         int rand3 = rand.nextInt(23);
         endTime.setHours(rand3);
-        //textView3.setText(numberString(rand3));
 
         //TextView textView4 = findViewById(R.id.textView17);
         int rand4 = rand.nextInt(59);
         endTime.setMins(rand4);
        //textView4.setText(numberString(rand4));
 
-        if (!switchHr) { //military time
+        if (switchHr) { //military time
             textView1.setText(startTime.military());
             textView2.setText(endTime.military());
         } else {

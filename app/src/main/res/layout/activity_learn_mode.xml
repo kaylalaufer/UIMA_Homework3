@@ -12,7 +12,7 @@
         android:layout_height="140dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="220dp"
         android:background="@drawable/buttonchoice"
         android:contentDescription="greater than or equal to 16"
         android:onClick="onLargeButtonClicked"
@@ -22,18 +22,18 @@
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
         app:tint="@color/white" />
-        //android:background="@drawable/buttonchoice"
 
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="80dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginBottom="235dp"
         android:background="@drawable/buttonchoice"
         android:contentDescription="greater than 8 and less than 16"
         android:onClick="onMediumButtonClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
         app:tint="@color/white" />
@@ -44,7 +44,7 @@
         android:layout_height="80dp"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="250dp"
         android:background="@drawable/buttonchoice"
         android:contentDescription="less than 8"
         android:onClick="onSmallButtonClicked"
@@ -53,7 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
         app:tint="@color/white" />
-        //android:background="@drawable/buttonchoice"
 
     <TextView
         android:id="@+id/textView17"

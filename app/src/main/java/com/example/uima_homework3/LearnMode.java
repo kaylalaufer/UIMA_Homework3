@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -18,6 +19,7 @@ public class LearnMode extends AppCompatActivity {
     Time endTime;
     private int buttonChoice;
     private int[] differHr;
+    ImageButton smallButton = findViewById(R.id.imageButton);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,22 @@ public class LearnMode extends AppCompatActivity {
             textView2.setText(endTime.toString());
         }
         differHr = calculateDiff(startTime.getHour(), startTime.getMins(), endTime.getHour(), endTime.getMins());
+
+        /*
+        smallButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View button) {
+                //Set the button's appearance
+                button.setSelected(!button.isSelected());
+                if (button.isSelected()) {
+                    //Handle selected state change
+                    buttonChoice = 1;
+                }
+            }
+
+        });
+        */
     }
+
 
     public void onSmallButtonClicked(View view) {
         buttonChoice = 1;

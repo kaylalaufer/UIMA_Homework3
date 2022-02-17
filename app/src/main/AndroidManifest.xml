@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UIMA_Homework3">
         <activity
+            android:name=".EasyResult"
+            android:exported="false" />
+        <activity
             android:name=".LearnMode"
             android:parentActivityName=".MainActivity">
             <meta-data

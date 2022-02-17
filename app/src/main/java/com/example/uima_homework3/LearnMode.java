@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -53,10 +55,19 @@ public class LearnMode extends AppCompatActivity {
         endTime.setMins(rand4);
        //textView4.setText(numberString(rand4));
 
+        sharedPreferences = getSharedPreferences("RandomTime", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
         if (switchHr) { //military time
+            editor.putString("startTime", startTime.military());
+            editor.putString("endTime", endTime.military());
+            editor.apply();
             textView1.setText(startTime.military());
             textView2.setText(endTime.military());
         } else {
+            editor.putString("startTime", startTime.toString());
+            editor.putString("endTime", endTime.toString());
+            editor.apply();
             textView1.setText(startTime.toString());
             textView2.setText(endTime.toString());
         }
@@ -65,8 +76,6 @@ public class LearnMode extends AppCompatActivity {
 
     public void onSmallButtonClicked(View view) {
         buttonChoice = 1;
-        //final RelativeLayout relativeLayout;
-        //relativeLayout.setBackgroundResource(188FCF);
     }
 
     public void onMediumButtonClicked(View view) {
@@ -77,10 +86,15 @@ public class LearnMode extends AppCompatActivity {
         buttonChoice = 3;
     }
 
+    public void onCheckButtonClicked(View view) {
+        Intent intent = new Intent(this, EasyResult.class);
+        startActivity(intent);
+    }
+
     private int correctResult () {
         if (differHr[0] < 8) {
             return 1;
-        } else if (differHr[0] >= 16) {
+        } else if (differHr[0] > 16 || (differHr[0] == 16 && differHr[1] != 0)) {
             return 3;
         }
         return 2;

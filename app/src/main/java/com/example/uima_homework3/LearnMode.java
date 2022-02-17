@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -18,6 +19,8 @@ public class LearnMode extends AppCompatActivity {
     boolean switchHr;
     Time startTime;
     Time endTime;
+    private int buttonChoice;
+    private int[] differHr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,61 @@ public class LearnMode extends AppCompatActivity {
             textView1.setText(startTime.toString());
             textView2.setText(endTime.toString());
         }
-
+        differHr = calculateDiff(startTime.getHour(), startTime.getMins(), endTime.getHour(), endTime.getMins());
     }
+
+    public void onSmallButtonClicked(View view) {
+        buttonChoice = 1;
+        //final RelativeLayout relativeLayout;
+        //relativeLayout.setBackgroundResource(188FCF);
+    }
+
+    public void onMediumButtonClicked(View view) {
+        buttonChoice = 2;
+    }
+
+    public void onLargeButtonClicked(View view) {
+        buttonChoice = 3;
+    }
+
+    private int correctResult () {
+        if (differHr[0] < 8) {
+            return 1;
+        } else if (differHr[0] >= 16) {
+            return 3;
+        }
+        return 2;
+    }
+
+    private int[] calculateDiff(int startHour, int startMinute, int endHour, int endMinute) {
+        int diffHour;
+        int diffMinute;
+        if (endHour >= startHour) {
+            if (endMinute >= startMinute) {
+                diffHour = endHour - startHour;
+                diffMinute = endMinute - startMinute;
+            } else if (endHour > startHour) {
+                diffMinute = endMinute + 60 - startMinute;
+                diffHour = endHour - 1 - startHour;
+            } else {
+                int[] day1 = calculateDiff(startHour, startMinute, 24, 0);
+                diffMinute = day1[1] + endMinute;
+                diffHour = day1[0] + endHour;
+                if (diffMinute >= 60) {
+                    diffMinute -=60;
+                    diffHour += 1;
+                }
+            }
+        } else {
+            int[] day1 = calculateDiff(startHour, startMinute, 24, 0);
+            diffMinute = day1[1] + endMinute;
+            diffHour = day1[0] + endHour;
+            if (diffMinute >= 60) {
+                diffMinute -=60;
+                diffHour += 1;
+            }
+        }
+        return new int[]{diffHour, diffMinute};
+    }
+
 }

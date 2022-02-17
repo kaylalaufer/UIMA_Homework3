@@ -79,6 +79,14 @@ public class Time {
         this.mins = mns;
     }
 
+    public int getHour () {
+        return hours;
+    }
+
+    public int getMins () {
+        return mins;
+    }
+
     /** Get a string representation, in standard format.
      @return the string, such as "2:45pm"
      */
@@ -105,6 +113,6 @@ public class Time {
      @return the string, such as "0405"
      */
     public String military() {
-        return four0s.format(this.hours * DIVISOR + this.mins);
+        return four0s.format(this.hours * DIVISOR + ":" + this.mins);
     }
 }

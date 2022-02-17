@@ -5,12 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -54,6 +49,7 @@ public class LearnMode extends AppCompatActivity {
         int rand4 = rand.nextInt(59);
         endTime.setMins(rand4);
        //textView4.setText(numberString(rand4));
+
 
         sharedPreferences = getSharedPreferences("RandomTime", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

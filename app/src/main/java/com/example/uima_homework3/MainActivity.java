@@ -2,25 +2,25 @@ package com.example.uima_homework3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
-//import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static final String sw = "switch";
     public SharedPreferences sharedPreferences;
+    private Switch switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch switch1 = findViewById(R.id.switch1);
+        //@SuppressLint("UseSwitchCompatOrMaterialCode") Switch
+        switch1 = findViewById(R.id.switch1);
         sharedPreferences = getSharedPreferences("TimeMode", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         switch1.setChecked(sharedPreferences.getBoolean(sw, true));

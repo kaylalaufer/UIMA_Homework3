@@ -113,6 +113,6 @@ public class Time {
      @return the string, such as "0405"
      */
     public String military() {
-        return four0s.format(this.hours * DIVISOR + ":" + this.mins);
+        return four0s.format(this.hours * DIVISOR + this.mins);
     }
 }

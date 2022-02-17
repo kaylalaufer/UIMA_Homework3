@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -43,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onLearnButtonClicked(View view) {
+        Log.d("debug", "clicked");
         Intent intent = new Intent(this, LearnMode.class);
+        Log.d("debug", "intent");
         startActivity(intent);
+        Log.d("debug", "start act");
     }
 
 }

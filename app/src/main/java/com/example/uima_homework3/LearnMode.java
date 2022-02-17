@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+//import android.widget.ImageButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -19,17 +21,27 @@ public class LearnMode extends AppCompatActivity {
     Time endTime;
     private int buttonChoice;
     private int[] differHr;
-    ImageButton smallButton = findViewById(R.id.imageButton);
+    //ImageButton smallButton = findViewById(R.id.imageButton);
+    ImageButton invisibleSmall;
+    ImageButton invisibleMedium;
+    ImageButton invisibleLarge;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("debug", "start");
         super.onCreate(savedInstanceState);
+        Log.d("debug", "set state");
         setContentView(R.layout.activity_learn_mode);
+        Log.d("debug", "set layout");
 
         // Get the Intent that started this activity
         Intent intent = getIntent();
         startTime = new Time("2:17pm");
         endTime = new Time("2:17am");
+
+        invisibleSmall = findViewById(R.id.imageButton8);
+        invisibleMedium = findViewById(R.id.imageButton9);
+        invisibleLarge = findViewById(R.id.imageButton10);
         SharedPreferences sharedPreferences = getSharedPreferences("TimeMode", MODE_PRIVATE);
         switchHr = sharedPreferences.getBoolean(MainActivity.sw, true);
         //if true - military format
@@ -89,19 +101,31 @@ public class LearnMode extends AppCompatActivity {
 
     public void onSmallButtonClicked(View view) {
         buttonChoice = 1;
+        invisibleSmall.setVisibility(View.VISIBLE);
+        invisibleMedium.setVisibility(View.INVISIBLE);
+        invisibleLarge.setVisibility(View.INVISIBLE);
     }
 
     public void onMediumButtonClicked(View view) {
         buttonChoice = 2;
+        invisibleMedium.setVisibility(View.VISIBLE);
+        invisibleSmall.setVisibility(View.INVISIBLE);
+        invisibleLarge.setVisibility(View.INVISIBLE);
     }
 
     public void onLargeButtonClicked(View view) {
         buttonChoice = 3;
+        invisibleLarge.setVisibility(View.VISIBLE);
+        invisibleSmall.setVisibility(View.INVISIBLE);
+        invisibleMedium.setVisibility(View.INVISIBLE);
     }
 
     public void onCheckButtonClicked(View view) {
         Intent intent = new Intent(this, EasyResult.class);
         startActivity(intent);
+        invisibleSmall.setVisibility(View.INVISIBLE);
+        invisibleMedium.setVisibility(View.INVISIBLE);
+        invisibleLarge.setVisibility(View.INVISIBLE);
     }
 
     private int correctResult () {

@@ -4,9 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class EasyResult extends AppCompatActivity {
+
+    ImageView smallWrong;
+    ImageView mediumWrong;
+    ImageView largeWrong;
 
 
     @Override
@@ -22,7 +28,8 @@ public class EasyResult extends AppCompatActivity {
         String endTime = sharedPreferences.getString("endTime", "");
         textView2.setText(endTime);
 
-
-
+        smallWrong = findViewById(R.id.imageView6);
+        mediumWrong = findViewById(R.id.imageView4);
+        largeWrong = findViewById(R.id.imageView5);
     }
 }

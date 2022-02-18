@@ -21,10 +21,10 @@ public class LearnMode extends AppCompatActivity {
     Time endTime;
     private int buttonChoice;
     private int[] differHr;
-    //ImageButton smallButton = findViewById(R.id.imageButton);
     ImageButton invisibleSmall;
     ImageButton invisibleMedium;
     ImageButton invisibleLarge;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class LearnMode extends AppCompatActivity {
         invisibleSmall = findViewById(R.id.imageButton8);
         invisibleMedium = findViewById(R.id.imageButton9);
         invisibleLarge = findViewById(R.id.imageButton10);
-        SharedPreferences sharedPreferences = getSharedPreferences("TimeMode", MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("TimeMode", MODE_PRIVATE);
         switchHr = sharedPreferences.getBoolean(MainActivity.sw, true);
         //if true - military format
 
@@ -82,25 +82,20 @@ public class LearnMode extends AppCompatActivity {
             textView2.setText(endTime.toString());
         }
         differHr = calculateDiff(startTime.getHour(), startTime.getMins(), endTime.getHour(), endTime.getMins());
-
-        /*
-        smallButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View button) {
-                //Set the button's appearance
-                button.setSelected(!button.isSelected());
-                if (button.isSelected()) {
-                    //Handle selected state change
-                    buttonChoice = 1;
-                }
-            }
-
-        });
-        */
+        int res = correctResult();
+        sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putInt("correctResult", res);
+        editor.apply();
     }
 
 
     public void onSmallButtonClicked(View view) {
         buttonChoice = 1;
+        sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("buttonChoice", buttonChoice);
+        editor.apply();
         invisibleSmall.setVisibility(View.VISIBLE);
         invisibleMedium.setVisibility(View.INVISIBLE);
         invisibleLarge.setVisibility(View.INVISIBLE);
@@ -108,6 +103,10 @@ public class LearnMode extends AppCompatActivity {
 
     public void onMediumButtonClicked(View view) {
         buttonChoice = 2;
+        sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("buttonChoice", buttonChoice);
+        editor.apply();
         invisibleMedium.setVisibility(View.VISIBLE);
         invisibleSmall.setVisibility(View.INVISIBLE);
         invisibleLarge.setVisibility(View.INVISIBLE);
@@ -115,6 +114,10 @@ public class LearnMode extends AppCompatActivity {
 
     public void onLargeButtonClicked(View view) {
         buttonChoice = 3;
+        sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("buttonChoice", buttonChoice);
+        editor.apply();
         invisibleLarge.setVisibility(View.VISIBLE);
         invisibleSmall.setVisibility(View.INVISIBLE);
         invisibleMedium.setVisibility(View.INVISIBLE);

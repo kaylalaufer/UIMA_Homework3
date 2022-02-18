@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,5 +32,30 @@ public class EasyResult extends AppCompatActivity {
         smallWrong = findViewById(R.id.imageView6);
         mediumWrong = findViewById(R.id.imageView4);
         largeWrong = findViewById(R.id.imageView5);
+
+        sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
+        int buttonChoice = sharedPreferences.getInt("buttonChoice", 0);
+        int correctAns = sharedPreferences.getInt("correctResult", -1);
+        if (buttonChoice == correctAns) {
+            //User choose the correct answer
+        } else {
+            if (buttonChoice == 1) {
+                smallWrong.setVisibility(View.VISIBLE);
+                mediumWrong.setVisibility(View.INVISIBLE);
+                largeWrong.setVisibility(View.INVISIBLE);
+            } else if (buttonChoice == 2) {
+                smallWrong.setVisibility(View.INVISIBLE);
+                mediumWrong.setVisibility(View.VISIBLE);
+                largeWrong.setVisibility(View.INVISIBLE);
+            } else {
+                smallWrong.setVisibility(View.INVISIBLE);
+                mediumWrong.setVisibility(View.INVISIBLE);
+                largeWrong.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    public void onRetryButtonClicked(View view) {
+        this.finish();
     }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/teal_200"
     tools:context=".EasyResult">
 
     <TextView
@@ -156,5 +157,55 @@
         app:icon="@android:drawable/ic_media_ff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="63dp"
+        android:layout_height="53dp"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:backgroundTint="#1EDD4E"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton7"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton7"
+        app:layout_constraintStart_toStartOf="@+id/imageButton7"
+        app:layout_constraintTop_toTopOf="@+id/imageButton7"
+        app:srcCompat="?android:attr/textCheckMark"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="307dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="63dp"
+        android:layout_height="53dp"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:backgroundTint="#1EDD4E"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageButton5"
+        app:layout_constraintVertical_bias="0.505"
+        app:srcCompat="?android:attr/textCheckMark" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="63dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="175dp"
+        android:background="@android:drawable/button_onoff_indicator_on"
+        android:backgroundTint="#1EDD4E"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="412dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="?android:attr/textCheckMark" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

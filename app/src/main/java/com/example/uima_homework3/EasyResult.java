@@ -15,6 +15,10 @@ public class EasyResult extends AppCompatActivity {
     ImageView mediumWrong;
     ImageView largeWrong;
 
+    ImageView smallCheck;
+    ImageView mediumCheck;
+    ImageView largeCheck;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +37,28 @@ public class EasyResult extends AppCompatActivity {
         mediumWrong = findViewById(R.id.imageView4);
         largeWrong = findViewById(R.id.imageView5);
 
+        smallCheck = findViewById(R.id.imageView3);
+        mediumCheck = findViewById(R.id.imageView8);
+        largeCheck = findViewById(R.id.imageView7);
+
         sharedPreferences = getSharedPreferences("ButtonAns", MODE_PRIVATE);
         int buttonChoice = sharedPreferences.getInt("buttonChoice", 0);
         int correctAns = sharedPreferences.getInt("correctResult", -1);
         if (buttonChoice == correctAns) {
             //User choose the correct answer
+            if (buttonChoice == 1) {
+                smallCheck.setVisibility(View.VISIBLE);
+                mediumCheck.setVisibility(View.INVISIBLE);
+                largeCheck.setVisibility(View.INVISIBLE);
+            } else if (buttonChoice == 2) {
+                smallCheck.setVisibility(View.INVISIBLE);
+                mediumCheck.setVisibility(View.VISIBLE);
+                largeCheck.setVisibility(View.INVISIBLE);
+            } else {
+                smallCheck.setVisibility(View.INVISIBLE);
+                mediumCheck.setVisibility(View.INVISIBLE);
+                largeCheck.setVisibility(View.VISIBLE);
+            }
         } else {
             if (buttonChoice == 1) {
                 smallWrong.setVisibility(View.VISIBLE);

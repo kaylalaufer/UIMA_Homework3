@@ -11,7 +11,11 @@
         android:theme="@style/Theme.UIMA_Homework3">
         <activity
             android:name=".EasyResult"
-            android:exported="false" />
+            android:parentActivityName=".LearnMode">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".LearnMode"
             android:parentActivityName=".MainActivity">

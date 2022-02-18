@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -49,19 +48,45 @@ public class LearnHard extends AppCompatActivity {
 
         inputHr.setText(String.valueOf(hours.getProgress()));
         inputMin.setText(String.valueOf(minutes.getProgress()));
-/*
+
         hours.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int pval = 0;
+            int val = 0;
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pval = progress;
+                val = progress;
+                inputHr.setText(String.valueOf(val));
             }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                inputHr.setText(String.valueOf(pval));
+
             }
         });
-*/
+
+        minutes.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int val = 0;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                val = progress;
+                inputMin.setText(String.valueOf(val));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
 
     }
 

@@ -87,6 +87,12 @@ public class LearnMode extends AppCompatActivity {
         editor = sharedPreferences.edit();
         editor.putInt("correctResult", res);
         editor.apply();
+
+        sharedPreferences = getSharedPreferences("TimeDiffer", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putInt("correctHr", differHr[0]);
+        editor.putInt("correctMin", differHr[1]);
+        editor.apply();
     }
 
 

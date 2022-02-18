@@ -10,11 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UIMA_Homework3">
         <activity
+            android:name=".LearnHard"
+            android:exported="false" />
+        <activity
             android:name=".EasyResult"
             android:parentActivityName=".LearnMode">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".LearnMode"

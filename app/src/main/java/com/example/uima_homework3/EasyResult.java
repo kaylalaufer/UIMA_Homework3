@@ -2,6 +2,7 @@ package com.example.uima_homework3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -78,5 +79,10 @@ public class EasyResult extends AppCompatActivity {
 
     public void onRetryButtonClicked(View view) {
         this.finish();
+    }
+
+    public void onNextButtonClicked(View view) {
+        Intent intent = new Intent(this, LearnHard.class);
+        startActivity(intent);
     }
 }

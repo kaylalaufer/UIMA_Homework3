@@ -16,13 +16,9 @@ public class LearnHard extends AppCompatActivity {
     private int correctHr, correctMin;
     private SeekBar hours;
     private SeekBar minutes;
-    private int userHr;
-    private int userMin;
     private TextView correct;
     private TextView incorrect;
     private Button check;
-    private TextView inputHr;
-    private TextView inputMin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,21 +44,36 @@ public class LearnHard extends AppCompatActivity {
         hours = findViewById(R.id.seekBar);
         minutes = findViewById(R.id.seekBar3);
 
-        inputHr = findViewById(R.id.textView34);
-        inputMin = findViewById(R.id.textView35);
+        TextView inputHr = findViewById(R.id.textView34);
+        TextView inputMin = findViewById(R.id.textView35);
 
-        userHr = hours.getProgress();
-        userMin = minutes.getProgress();
+        inputHr.setText(String.valueOf(hours.getProgress()));
+        inputMin.setText(String.valueOf(minutes.getProgress()));
+/*
+        hours.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            int pval = 0;
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                pval = progress;
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                inputHr.setText(String.valueOf(pval));
+            }
+        });
+*/
 
     }
 
     public void onCheck(View view) {
-        String strHr = "" + userHr;
-        String strMin = "" + userMin;
-        inputHr.setText(strHr);
-        inputMin.setText(strMin);
-        inputHr.setVisibility(View.VISIBLE);
-        inputMin.setVisibility(View.VISIBLE);
+        //String strHr = "" + userHr;
+        //String strMin = "" + userMin;
+        //inputHr.setText(strHr);
+        //inputMin.setText(strMin);
+        //inputHr.setVisibility(View.VISIBLE);
+        //inputMin.setVisibility(View.VISIBLE);
+        int userHr = hours.getProgress();
+        int userMin = minutes.getProgress();
         if (userHr == correctHr && userMin == correctMin) {
             check.setVisibility(View.INVISIBLE);
             correct.setVisibility(View.VISIBLE);

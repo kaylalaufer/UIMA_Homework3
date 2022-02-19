@@ -74,7 +74,7 @@
         android:layout_marginStart="84dp"
         android:ems="10"
         android:inputType="time"
-        android:text="00"
+        android:text="8"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime5"
         app:layout_constraintStart_toStartOf="@+id/textView4" />
@@ -101,7 +101,7 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="time"
-        android:text="00"
+        android:text="20"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime" />

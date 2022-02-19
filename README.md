@@ -14,6 +14,11 @@ Kayla Laufer (klaufer1)
    landing screen.
 
 2. It does not make sense to have six (or more?) different activities for this simple version of 
-   the app since some activities are similar and therefore can be combined. 
+   the app since some activities are similar and therefore can be combined. To use less activities,
+   we changed the visibility for certain features in the same activity. For example, the LearnHard
+   and HardResult screens are the same activity, but some of the element's visibility changes when
+   the buttons are clicked.
 
-3. 
+3. We tested our results for LearnEasy by running the activity multiple times. We calculated the time
+   difference range and selected the appropriate button. We did this until we were able to test each
+   result output multiple times.

@@ -1,6 +1,7 @@
 # UIMA_Homework3
-# Jingyu Huang (jhuan146)
-# Kayla Laufer (klaufer1)
+
+Jingyu Huang (jhuan146)
+Kayla Laufer (klaufer1)
 
 1.
 

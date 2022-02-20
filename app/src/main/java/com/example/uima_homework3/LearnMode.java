@@ -14,7 +14,6 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class LearnMode extends AppCompatActivity {
-    int randNum;
     private static final Random rand = new Random();
     boolean switchHr;
     Time startTime;
@@ -34,8 +33,6 @@ public class LearnMode extends AppCompatActivity {
         setContentView(R.layout.activity_learn_mode);
         Log.d("debug", "set layout");
 
-        // Get the Intent that started this activity
-        Intent intent = getIntent();
         startTime = new Time("2:17pm");
         endTime = new Time("2:17am");
 

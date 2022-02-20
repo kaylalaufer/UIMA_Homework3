@@ -8,6 +8,8 @@ Kayla Laufer (klaufer1)
    is toasted to remind users of their choices each time they switch;
    In LearnEasy screen, we change the visibility of a button to indicate that it is selected and
    allow users to change their selections freely before clicking the "CHECK" to check the result;
+   In LearnEasy screen, small button should be chosen when elapse<8, medium when 8<=elapse<=16, and
+   large when elapse>16;
    For buttons at the bottom of the screen in Learn Mode, we use another color (blue) to 
    differentiate from that of the selection buttons;
    On HardResult screen we implement two buttons that allow users to retry or go back to the

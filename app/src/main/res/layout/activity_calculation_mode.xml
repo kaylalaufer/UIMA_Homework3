@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="70dp"
-        android:text="MIN"
+        android:text="@string/MIN"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginEnd="81dp"
-        android:text="00"
+        android:text="@string/_00"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginEnd="27dp"
-        android:text=":"
+        android:text="@string/colon"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime7"
         app:layout_constraintEnd_toStartOf="@+id/editTextTime7"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,7 +62,7 @@
         android:layout_width="6dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:text=":"
+        android:text="@string/colon"
         android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
         app:layout_constraintStart_toEndOf="@+id/textView9" />
@@ -73,11 +73,13 @@
         android:layout_height="50dp"
         android:layout_marginStart="84dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="time"
-        android:text="8"
+        android:text="@string/_8"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime5"
-        app:layout_constraintStart_toStartOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        tools:ignore="LabelFor" />
 
 
     <EditText
@@ -88,8 +90,10 @@
         android:layout_marginTop="112dp"
         android:ems="10"
         android:inputType="time"
-        android:text="00"
+        android:text="@string/_00"
         android:textAlignment="center"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -101,8 +105,10 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="time"
-        android:text="20"
+        android:text="@string/_20"
         android:textAlignment="center"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
 
@@ -114,8 +120,10 @@
         android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="time"
-        android:text="00"
+        android:text="@string/_00"
         android:textAlignment="center"
+        android:importantForAutofill="no"
+        tools:ignore="LabelFor"
         app:layout_constraintStart_toEndOf="@+id/editTextTime6"
         app:layout_constraintTop_toBottomOf="@+id/editTextTime5" />
 
@@ -151,7 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginEnd="27dp"
-        android:text=":"
+        android:text="@string/colon"
         app:layout_constraintBaseline_toBaselineOf="@+id/editTextTime5"
         app:layout_constraintEnd_toStartOf="@+id/editTextTime5"
         app:layout_constraintHorizontal_bias="0.809"
@@ -171,7 +179,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#6a0dad"
-        android:contentDescription="Check"
+        android:contentDescription="@string/CHECK"
         android:onClick="calculation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +196,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
         android:layout_marginTop="287dp"
-        android:text="00"
+        android:text="@string/_00"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -199,7 +207,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="172dp"
-        android:text="HR"
+        android:text="@string/HR"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
         app:layout_constraintStart_toStartOf="parent" />

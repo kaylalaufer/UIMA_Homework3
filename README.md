@@ -11,7 +11,7 @@ Kayla Laufer (klaufer1)
    In LearnEasy screen, small button should be chosen when elapse<8, medium when 8<=elapse<=16, and
    large when elapse>16;
    For buttons at the bottom of the screen in Learn Mode, we use another color (blue) to 
-   differentiate from that of the selection buttons;
+   differentiate from that of the selection buttons (purple);
    On HardResult screen we implement two buttons that allow users to retry or go back to the
    landing screen.
 
@@ -19,7 +19,8 @@ Kayla Laufer (klaufer1)
    the app since some activities are similar and therefore can be combined. To use less activities,
    we changed the visibility for certain features in the same activity. For example, the LearnHard
    and HardResult screens are the same activity, but some of the element's visibility changes when
-   the buttons are clicked.
+   the buttons are clicked. Therefore, having more than six different activities is unnecessary, since
+   similar screens can use the same activity by utilizing the visibility feature.
 
 3. We tested our results for LearnEasy by running the activity multiple times. We calculated the time
    difference range and selected the appropriate button. We did this until we were able to test each

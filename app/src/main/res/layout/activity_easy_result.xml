@@ -53,8 +53,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
-        app:tint="@color/blue" />
-    //android:background="@drawable/buttonchoice"
+        app:tint="@color/white" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -68,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
-        app:tint="@color/blue" />
+        app:tint="@color/white" />
 
     <ImageButton
         android:id="@+id/imageButton7"
@@ -82,7 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
-        app:tint="@color/blue" />
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/textView23"

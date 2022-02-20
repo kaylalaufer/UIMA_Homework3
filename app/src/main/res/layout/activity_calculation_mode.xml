@@ -188,7 +188,7 @@
         app:layout_constraintTop_toTopOf="@+id/editTextTime6"
         app:layout_constraintVertical_bias="0.361"
         app:srcCompat="@android:drawable/ic_lock_idle_alarm"
-        app:tint="@color/blue" />
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/textView9"

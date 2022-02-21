@@ -14,6 +14,7 @@ Kayla Laufer (klaufer1)
    differentiate from that of the selection buttons (purple);
    On HardResult screen we implement two buttons that allow users to retry or go back to the
    landing screen.
+   The layout looks the best on smaller APIs.
 
 2. It does not make sense to have six (or more?) different activities for this simple version of 
    the app since some activities are similar and therefore can be combined. To use less activities,

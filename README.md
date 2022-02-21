@@ -14,7 +14,11 @@ Kayla Laufer (klaufer1)
    differentiate from that of the selection buttons (purple);
    On HardResult screen we implement two buttons that allow users to retry or go back to the
    landing screen.
-   The layout looks the best on smaller APIs.
+   The layout looks the best on devices with larger resolutions and longer ratios. However, it does
+   not look as nice when applied to wider tablets or devices like 3.7 FWVGA slider. This is because 
+   we assign some margins directly to position certain elements instead of using flexible ones such 
+   as ConstraintLayout. 
+   Different APIs do not affect the functioning of this app as we have tested from API22 to API30.
 
 2. It does not make sense to have six (or more?) different activities for this simple version of 
    the app since some activities are similar and therefore can be combined. To use less activities,
